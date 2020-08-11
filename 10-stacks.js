@@ -63,3 +63,45 @@ stack.push("Third Node");
 // stack.pop();
 console.log(stack.peek());
 console.log(stack);
+
+// Stack implemented with an array
+class StackArray {
+	constructor() {
+		this.items = [];
+	}
+	pop() {
+		const data = this.items.pop();
+		return data;
+	}
+	push(data) {
+		this.items.push(data);
+	}
+	peek() {
+		return this.items[this.items.length - 1];
+	}
+	isEmpty() {
+		return this.items.length === 0;
+	}
+	printStack() {
+		let items = "";
+		for(let item of this.items) {
+			items = items + " " +  item; 
+		}
+		return items;
+	}
+}
+const arrayStack = new StackArray();
+arrayStack.push(1);
+arrayStack.push(2);
+arrayStack.push(3);
+arrayStack.push(4);
+arrayStack.push(5);
+console.log(arrayStack.peek());
+console.log(arrayStack.isEmpty());
+// console.log(arrayStack.pop());
+console.log(arrayStack);
+console.log(arrayStack.printStack());
+
+
+
+
